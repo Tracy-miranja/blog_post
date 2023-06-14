@@ -1,7 +1,5 @@
 class AddUserRefToLikes < ActiveRecord::Migration[7.0]
   def change
-    add_reference :likes, :user, null: false, foreign_key: true
-    add_column :likes, :address, :string
-    add_index :likes, :address
+    add_reference :Likes, :author, null: false, foreign_key: { to_table: :users }
   end
 end
