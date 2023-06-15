@@ -40,14 +40,15 @@ One attachment
 </details>
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-  
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!--KEY FEATURE -->
-KEY FEATURE <a name="Key-feature"></a>
--User-friendly Interface
--Real-time Collaboration
--Robust Security Measures
+## 🔭 Key Features <a name="key-features"></a>
+ 
+- [ ] **User-friendly Interface**
+- [ ] **Real-time Collaboration**
+- [ ] **Robust Security Measures**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
  
 <!-- GETTING STARTED -->
  
