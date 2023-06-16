@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_15_202651) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_205356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,23 +18,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_202651) do
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
+    t.bigint "author_id", null: false
     t.bigint "post_id", null: false
-    t.bigint "author_id"
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.string "address"
+    t.bigint "author_id", null: false
     t.bigint "post_id", null: false
-    t.index ["address"], name: "index_likes_on_address"
+    t.index ["author_id"], name: "index_likes_on_author_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -42,14 +38,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_202651) do
     t.string "text"
     t.integer "comments_counter", default: 0
     t.integer "likes_counter", default: 0
+    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.string "address"
-    t.bigint "author_id"
-    t.index ["address"], name: "index_posts_on_address"
     t.index ["author_id"], name: "index_posts_on_author_id"
-    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,10 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_202651) do
   end
 
   add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "users"
   add_foreign_key "comments", "users", column: "author_id"
   add_foreign_key "likes", "posts"
-  add_foreign_key "likes", "users"
-  add_foreign_key "posts", "users"
+  add_foreign_key "likes", "users", column: "author_id"
   add_foreign_key "posts", "users", column: "author_id"
 end
