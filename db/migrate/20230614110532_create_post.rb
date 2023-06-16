@@ -5,6 +5,7 @@ class CreatePost < ActiveRecord::Migration[7.0]
       t.string :text
       t.integer :comments_counter, default: 0
       t.integer :likes_counter, default: 0
+      t.references :author, null: false, foreign_key: { to_table: :users }
 
       t.timestamps
     end
