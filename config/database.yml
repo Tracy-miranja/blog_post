@@ -23,9 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: blog_post_development
+  database: blog_post_tracy
   username: postgres
-  password: '19Tracy99'
+  password: "19Tracy99"
   port: 5432
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,7 +61,7 @@ test:
   <<: *default
   database: blog_post_test
   username: postgres
-  password: '19Tracy99'
+  password: "19Tracy99"
   host: localhost
   port: 5432
 
