@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: blog_post_development
+  database: blog_post_tracy
   username: postgres
   password: "19Tracy99"
   port: 5432
@@ -60,6 +60,10 @@ development:
 test:
   <<: *default
   database: blog_post_test
+  username: postgres
+  password: "19Tracy99"
+  host: localhost
+  port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
