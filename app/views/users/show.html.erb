@@ -1,0 +1,13 @@
+<h1>Post Details</h1>
+<% @users.each do |user| %>
+    <h1>List of Posts for User: <%= user.name %></h1>
+    <ul>
+      <% user.posts.each do |post| %>
+        <li><%= post.title %></li>
+        <li><%= post.comments %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<p>Title: Example Post</p>
+<p>Author: John Doe</p>
+<p>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
