@@ -2276,3 +2276,19 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 194ms (Views: 133.2ms | ActiveRecord: 2.9ms | Allocations: 17353)
 
 
+Started GET "/posts/1" for 127.0.0.1 at 2023-06-20 17:54:05 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/posts/1"):
+  
+Started GET "/posts" for 127.0.0.1 at 2023-06-20 17:59:14 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (18.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  Rendered posts/index.html.erb within layouts/application (Duration: 26.9ms | Allocations: 919)
+  Rendered layout layouts/application.html.erb (Duration: 293.8ms | Allocations: 35174)
+Completed 200 OK in 378ms (Views: 285.8ms | ActiveRecord: 18.7ms | Allocations: 40641)
+
+
