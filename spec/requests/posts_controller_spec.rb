@@ -19,13 +19,12 @@ RSpec.describe 'Controllers', type: :request do
   end
   describe 'GET show' do
     it 'returns a successful response' do
-        user = User.create(name: 'John Doe')
-        post = user.posts.create(title: 'Hello, World!')
-    
-        get user_post_path(user_id: user.id, id: post.id)
-    
-        expect(response).to have_http_status(:ok)
-      end
+      user = User.create(name: 'John Doe')
+      post = user.posts.create(title: 'Hello, World!')
+
+      get user_post_path(user_id: user.id, id: post.id)
+
+      expect(response).to have_http_status(:ok)
+    end
   end
-  
 end
