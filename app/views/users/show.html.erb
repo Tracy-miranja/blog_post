@@ -1,14 +1,20 @@
-<h1> users info</h1>
+<h1>Users Info</h1>
 <h1><%= @users.name %></h1>
 <div><img src="<%= @users.photo %>" alt="User Photo"></div>
-Number of posts:<%= @users.posts_counter %><br>
-<h2> Bio </h2>
+Number of posts: <%= @users.posts_counter %><br>
+<h2>Bio</h2>
 <%= @users.bio %>
-<% @posts.each do |posts| %>
-  <li><%= posts.title %></li>
-  <li><%= posts.text %></li>
-  <li>comments, <%= posts.comments_counter %></li>
-  <li>likes: <%= posts.likes_counter %></li>
-  <% end %>
+
+<% @posts.limit(3).each do |post| %>
+  <li><%= post.title %></li>
+  <li><%= post.text %></li>
+  <li>Comments: <%= post.comments_counter %></li>
+  <li>Likes: <%= post.likes_counter %></li>
+<% end %>
+
+<% if @users.posts_counter > 3 %>
+  <%= link_to "See All Posts", user_posts_path(@user) %>
+<% end %>
+
  
 

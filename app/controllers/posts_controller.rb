@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
- layout 'standard'
+  layout 'standard'
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
