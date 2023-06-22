@@ -1,5 +1,12 @@
 <h1>Display posts</h1>
-<% @posts.each do |posts| %>
-    <li><%= post.title %></li>
-    <li><%= post.comments %></li>
+<% @users.each do |user| %>
+     <div><img src="<%= user.photo %>" alt="User Photo"></div>
+      <h1><%= user.name %></h1>
+      <p>Number of post:<%= user.posts_counter %></p> 
+      <% @posts.each do |posts| %>
+        <li><%= posts.title %></li>
+        <li><%= posts.text %></li>
+        <li>comments, <%= posts.comments_counter %></li>
+        <li>likes: <%= posts.likes_counter %></li>
+        <% end %> 
     <% end %>

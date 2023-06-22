@@ -2349,3 +2349,162 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 44ms (Views: 36.8ms | ActiveRecord: 0.8ms | Allocations: 3320)
 
 
+Started GET "/" for 127.0.0.1 at 2023-06-22 09:31:23 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (37.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 6037.1ms | Allocations: 3765)
+  Rendered layout layouts/application.html.erb (Duration: 6982.1ms | Allocations: 17532)
+Completed 200 OK in 8317ms (Views: 7131.3ms | ActiveRecord: 682.4ms | Allocations: 20242)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-06-22 09:32:16 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/standard.html.erb
+  Rendering posts/index.html.erb within layouts/standard
+  [1m[36mPost Load (67.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  Rendered posts/index.html.erb within layouts/standard (Duration: 84.0ms | Allocations: 813)
+  Rendered layout layouts/standard.html.erb (Duration: 246.2ms | Allocations: 2951)
+Completed 500 Internal Server Error in 645ms (ActiveRecord: 67.8ms | Allocations: 5580)
+
+
+  
+ActionView::Template::Error (The asset "style.css" is not present in the asset pipeline.
+):
+     6:       <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
+     7:       <meta http-equiv = "Content-Language" content = "en-us" />
+     8:       <title>BlogPost</title>
+     9:       <%= stylesheet_link_tag "style" %>
+    10:    </head>
+    11: 
+    12:    <body id = "library">
+  
+app/views/layouts/standard.html.erb:9
+Started GET "/" for 127.0.0.1 at 2023-06-22 09:37:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (37.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 79.7ms | Allocations: 1168)
+  Rendered layout layouts/application.html.erb (Duration: 1475.0ms | Allocations: 36243)
+Completed 200 OK in 2249ms (Views: 1582.3ms | ActiveRecord: 12.8ms | Allocations: 43499)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-06-22 09:38:13 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/standard.html.erb
+  Rendering posts/index.html.erb within layouts/standard
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  Rendered posts/index.html.erb within layouts/standard (Duration: 19.7ms | Allocations: 825)
+  Rendered layout layouts/standard.html.erb (Duration: 91.6ms | Allocations: 3341)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 1.5ms | Allocations: 6008)
+
+
+  
+ActionView::Template::Error (The asset "style.css" is not present in the asset pipeline.
+):
+     6:       <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
+     7:       <meta http-equiv = "Content-Language" content = "en-us" />
+     8:       <title>BlogPost</title>
+     9:       <%= stylesheet_link_tag "style" %>
+    10:    </head>
+    11: 
+    12:    <body id = "library">
+  
+app/views/layouts/standard.html.erb:9
+Started GET "/posts" for 127.0.0.1 at 2023-06-22 09:39:07 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/standard.html.erb
+  Rendering posts/index.html.erb within layouts/standard
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  Rendered posts/index.html.erb within layouts/standard (Duration: 4.3ms | Allocations: 748)
+  Rendered layout layouts/standard.html.erb (Duration: 52.0ms | Allocations: 2913)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.5ms | Allocations: 3628)
+
+
+  
+ActionView::Template::Error (The asset "style.css" is not present in the asset pipeline.
+):
+     6:       <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
+     7:       <meta http-equiv = "Content-Language" content = "en-us" />
+     8:       <title>BlogPost</title>
+     9:       <%= stylesheet_link_tag "style.css" %>
+    10:    </head>
+    11: 
+    12:    <body id = "library">
+  
+app/views/layouts/standard.html.erb:9
+Started GET "/posts" for 127.0.0.1 at 2023-06-22 09:39:35 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/standard.html.erb
+  Rendering posts/index.html.erb within layouts/standard
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  Rendered posts/index.html.erb within layouts/standard (Duration: 6.1ms | Allocations: 752)
+  Rendered layout layouts/standard.html.erb (Duration: 23.7ms | Allocations: 1110)
+Completed 200 OK in 38ms (Views: 29.7ms | ActiveRecord: 0.6ms | Allocations: 1867)
+
+
+Started GET "/posts" for 127.0.0.1 at 2023-06-22 09:41:17 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/standard.html.erb
+  Rendering posts/index.html.erb within layouts/standard
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  Rendered posts/index.html.erb within layouts/standard (Duration: 5.5ms | Allocations: 635)
+  Rendered layout layouts/standard.html.erb (Duration: 7.1ms | Allocations: 839)
+Completed 200 OK in 31ms (Views: 8.5ms | ActiveRecord: 0.7ms | Allocations: 3264)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-22 09:41:27 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/standard.html.erb
+  Rendering users/index.html.erb within layouts/standard
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/standard (Duration: 4.7ms | Allocations: 800)
+  Rendered layout layouts/standard.html.erb (Duration: 6.7ms | Allocations: 1002)
+Completed 200 OK in 32ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 3116)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-22 09:42:21 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 640)
+  Rendered layout layouts/application.html.erb (Duration: 76.3ms | Allocations: 14426)
+Completed 200 OK in 110ms (Views: 82.7ms | ActiveRecord: 0.4ms | Allocations: 16790)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-22 09:43:18 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/standard.html.erb
+  Rendering users/index.html.erb within layouts/standard
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/standard (Duration: 5.8ms | Allocations: 635)
+  Rendered layout layouts/standard.html.erb (Duration: 9.5ms | Allocations: 839)
+Completed 200 OK in 35ms (Views: 12.4ms | ActiveRecord: 0.4ms | Allocations: 3149)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-22 20:01:26 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (40.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/standard.html.erb
+  Rendering users/index.html.erb within layouts/standard
+  [1m[36mUser Load (78.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/standard (Duration: 133.1ms | Allocations: 1168)
+  Rendered layout layouts/standard.html.erb (Duration: 154.6ms | Allocations: 1653)
+Completed 200 OK in 882ms (Views: 217.2ms | ActiveRecord: 78.4ms | Allocations: 8805)
+
+
