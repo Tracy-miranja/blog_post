@@ -1,1 +1,15 @@
 <h1>Post Details</h1>
+<h4><%= @users.name %></h4>
+<%= @posts.text %>
+<li>comments, <%= @posts.comments_counter %></li>
+<li>likes: <%= @posts.likes_counter %></li>
+
+<% if @comments.present? %>
+<h2>Comments:</h2>
+<% @comments.each do |comment| %>
+  <p><%= comment.text %> - <%= comment.author.name %></p>
+<% end %>
+<% else %>
+  <p>No comments.</p>
+<% end %>
+
