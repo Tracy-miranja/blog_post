@@ -5,26 +5,27 @@ body {
   background-color: #fff;
 }
 
- a:link, 
- a:active, 
- a:visited {
-  color: #CD0000;
+a:link,
+a:active,
+a:visited
+{
+  color: #cd0000;
 }
 
- input {
+input {
   margin-bottom: 5px;
 }
 
- p {
+p {
   line-height: 150%;
 }
 
- div#container {
+div#container {
   width: 760px;
   margin: 0 auto;
 }
 
- div#header {
+div#header {
   text-align: center;
   padding-bottom: 15px;
 }
