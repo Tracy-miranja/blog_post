@@ -5,12 +5,6 @@ body {
   background-color: #fff;
 }
 
-a:link,
-a:active,
-a:visited{
-  color: #cd0000;
-}
-
 input {
   margin-bottom: 5px;
 }
