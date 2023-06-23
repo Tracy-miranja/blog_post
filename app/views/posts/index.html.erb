@@ -5,20 +5,19 @@
 </div>
 <h1><%= @user.name %></h1>
 <p>Number of posts: <%= @user.posts_counter %></p> 
-
-<% @posts.each do |post| %>
-  <li><%= post.title %></li>
-  <li><%= post.text %></li>
-  <li>Comments: <%= post.comments_counter %></li>
-  <li>Likes: <%= post.likes_counter %></li>
-  <% if @comments.present? %>
 <h2>Comments:</h2>
-<% @comments.each do |comment| %>
-  <p><%= comment.text %> - <%= comment.author.name %></p>
-<% end %>
-<% else %>
-  <p>No comments.</p>
-<% end %>
-<% end %>
+<% @posts.limit(5).each do |post| %>
+    <h1><%= post.title %></h1>
+    <p><%= post.text %></p>
+    <li>Comments: <%= post.comments_counter %></li>
+    <li>Likes: <%= post.likes_counter %></li>
+    <% if post.comments.present? %>
+      <% recent_comment = post.comments.recent.first %>
+      <p>Most recent comment: <%= recent_comment.text %> - <%= recent_comment.author.name %></p>
+    <% else %>
+      <p>No comments.</p>
+    <% end %>
+  <% end %>
+  
 
     

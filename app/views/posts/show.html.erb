@@ -1,8 +1,8 @@
 <h1>Post Details</h1>
-<h4><%= @users.name %></h4>
-<%= @posts.text %>
-<li>comments, <%= @posts.comments_counter %></li>
-<li>likes: <%= @posts.likes_counter %></li>
+<h4><%= @post.author.name %></h4>
+<p><%= @post.text %></p>
+<li>comments: <%= @post.comments_counter %></li>
+<li>likes: <%= @post.likes_counter %></li>
 
 <% if @comments.present? %>
 <h2>Comments:</h2>
