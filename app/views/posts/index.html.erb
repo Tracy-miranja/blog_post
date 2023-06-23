@@ -5,19 +5,20 @@
 </div>
 <h1><%= @user.name %></h1>
 <p>Number of posts: <%= @user.posts_counter %></p> 
-<h2>Comments:</h2>
-<% @posts.limit(5).each do |post| %>
-    <h1><%= post.title %></h1>
+<% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
     <p><%= post.text %></p>
     <li>Comments: <%= post.comments_counter %></li>
     <li>Likes: <%= post.likes_counter %></li>
-    <% if post.comments.present? %>
-      <% recent_comment = post.comments.recent.first %>
+    <h2>Comments:</h2>
+    <% if post.comments.any? %>
+      <% recent_comment = post.comments.order(created_at: :desc).first %>
       <p>Most recent comment: <%= recent_comment.text %> - <%= recent_comment.author.name %></p>
     <% else %>
       <p>No comments.</p>
     <% end %>
   <% end %>
+  
   
 
     
