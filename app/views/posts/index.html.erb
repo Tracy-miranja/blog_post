@@ -1,5 +1,24 @@
 <h1>Display posts</h1>
-<% @posts.each do |posts| %>
-    <li><%= post.title %></li>
-    <li><%= post.comments %></li>
+
+<div>
+  <img src="<%= @user.photo %>" alt="User Photo">
+</div>
+<h1><%= @user.name %></h1>
+<p>Number of posts: <%= @user.posts_counter %></p> 
+<% @posts.each do |post| %>
+    <h2><%= post.title %></h2>
+    <p><%= post.text %></p>
+    <li>Comments: <%= post.comments_counter %></li>
+    <li>Likes: <%= post.likes_counter %></li>
+    <h2>Comments:</h2>
+    <% if post.comments.any? %>
+      <% recent_comment = post.comments.order(created_at: :desc).first %>
+      <p>Most recent comment: <%= recent_comment.text %> - <%= recent_comment.author.name %></p>
+    <% else %>
+      <p>No comments.</p>
     <% end %>
+  <% end %>
+  
+  
+
+    
