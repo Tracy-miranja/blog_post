@@ -6,11 +6,9 @@
 
 <%= link_to 'Create Comments', new_user_post_comment_path(@user, @post)%>
 <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :post) do |form| %>
-  <%= form.hidden_field :user_id, value: @user.id %>
   <%= form.hidden_field :post_id, value: @post.id %>
   <%= form.submit "Like" %>
-<% end %>
-
+<%end%>
 <% if @comments.present? %>
 <h2>Comments:</h2>
 <% @comments.each do |comment| %>
