@@ -4,10 +4,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new( text: comment_params[:text],  post_id: params[:post_id], author_id: current_user[:id])
-  
+    @comment = Comment.new(text: comment_params[:text], post_id: params[:post_id], author_id: current_user[:id])
+
     if @comment.save
-      redirect_to user_post_path(author_id: params[:author_id], id: params[:post_id]), notice: 'Comment created successfully.'
+      redirect_to user_post_path(author_id: params[:author_id], id: params[:post_id]),
+                  notice: 'Comment created successfully.'
     else
       render :new
     end
