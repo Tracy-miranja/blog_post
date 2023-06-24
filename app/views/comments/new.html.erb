@@ -1,8 +1,8 @@
-<%= form_with(model: @comment, url: user_post_comments_path, method: :post) do |f| %>
+<%= form_with(url: user_post_likes_path(@user, @post), method: :post) do |f| %>
     <div>
-    <%= f.label :text %>
-    <%= f.text_area :text %>
-    <%= f.submit "Add Comments" %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit "Like Post" %>
     </div>
-<% end %>
+  <% end %>
+  
   
