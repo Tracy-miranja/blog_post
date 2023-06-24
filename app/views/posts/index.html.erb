@@ -11,7 +11,6 @@
     <li><%= post.text %></li>
     <li>Comments: <%= post.comments_counter %></li>
     <li>Likes: <%= post.likes_counter %></li>
-
     <% if post.comments.any? %>
       <% recent_comment = post.comments.order(created_at: :desc).first %>
       <p>Most recent comment: <%= recent_comment.text %> - <%= recent_comment.author.name %></p>
