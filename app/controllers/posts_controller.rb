@@ -7,7 +7,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
+    @comments = Comment.where(post_id: params[:id])
+    @user = User.find(params[:user_id])
+
   end
 
   def new 
@@ -15,9 +17,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(author_id: current_user[:id], title: post_params[:title], text: post_params[:text])
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to user_post_path(current_user, @post), notice: 'Post was successfully created.'
     else
       render :new
     end

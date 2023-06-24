@@ -1,12 +1,14 @@
-<%= form_for @post do |f| %>
-    <h1>Enter new post</h1>
-    <hr>
+
+<%= form_with(model: @post, url: user_user_create_post_path, method: :post, remote: false)  do |f| %>
     <div>
-      Enter title: <%= f.text_field :title, size: "65x6", placeholder: "Post title", class: "w-1/2" %>
+      <%= f.label :title %>
+      <%= f.text_field :title, size: "65x6", placeholder: "Post title", class: "w-1/2" %>
     </div>
     <div>
-      Enter text: <%= f.text_area :text, size: "70x6", placeholder: "Your post content", class: "w-1/2" %>
+      <%= f.label :text %>
+      <%= f.text_area :text, size: "70x6", placeholder: "Your post content", class: "w-1/2" %>
     </div>
-    <%= f.submit "Add New Post", class: "btn btn-primary" %>
+    <%= f.submit "Create Post", class: "btn btn-primary" %>
   <% end %>
+  
   
