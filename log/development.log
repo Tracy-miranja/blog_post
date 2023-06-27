@@ -19274,3 +19274,32 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 737ms (Views: 627.8ms | ActiveRecord: 52.1ms | Allocations: 27603)
 
 
+Started GET "/users/2" for 127.0.0.1 at 2023-06-27 11:38:55 +0300
+Started GET "/" for ::1 at 2023-06-27 11:39:01 +0300
+Started GET "/" for ::1 at 2023-06-27 11:39:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (43.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (38.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/standard.html.erb
+  Rendering users/index.html.erb within layouts/standard
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/standard (Duration: 83.9ms | Allocations: 1430)
+  Rendered layout layouts/standard.html.erb (Duration: 498.0ms | Allocations: 2329)
+Completed 200 OK in 1467ms (Views: 575.9ms | ActiveRecord: 210.3ms | Allocations: 18332)
+
+
+Started GET "/" for ::1 at 2023-06-27 11:43:00 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/standard.html.erb
+  Rendering users/index.html.erb within layouts/standard
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/standard (Duration: 133.7ms | Allocations: 1010)
+  Rendered layout layouts/standard.html.erb (Duration: 141.5ms | Allocations: 1614)
+Completed 200 OK in 193ms (Views: 159.3ms | ActiveRecord: 1.5ms | Allocations: 3030)
+
+
