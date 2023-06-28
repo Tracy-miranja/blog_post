@@ -39,5 +39,4 @@ RSpec.describe 'Users', type: :system do
 
     expect(page).to have_link('See All Posts')
   end
-
-  end
+end

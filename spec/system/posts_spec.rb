@@ -15,5 +15,4 @@ RSpec.describe 'Posts', type: :system do
     expect(page).to have_content('Comments: 2')
     expect(page).to have_content('Likes: 2')
   end
-  
 end

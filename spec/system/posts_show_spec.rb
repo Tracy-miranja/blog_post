@@ -3,7 +3,7 @@ RSpec.describe 'Posts', type: :system do
   before do
     driven_by(:rack_test)
   end
-describe 'Post show page' do
+  describe 'Post show page' do
     user = User.create(name: 'Lilly', photo: 'https://randomuser.me/api/portraits/women/67.jpg', bio: 'Project manager')
     post = Post.create(author: user, title: 'First post', text: 'First post', comments_counter: 2, likes_counter: 2)
     comment1 = Comment.create(author: user, post:, text: 'Great post!')

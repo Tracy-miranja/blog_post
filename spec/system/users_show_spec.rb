@@ -4,7 +4,7 @@ RSpec.describe 'Users', type: :system do
   before do
     driven_by(:rack_test)
   end
-describe 'User show page' do
+  describe 'User show page' do
     scenario 'displays the user profile picture, username, number of posts, bio, and first 3 posts' do
       user = User.create(name: 'Lilly', posts_counter: 3, photo: 'https://randomuser.me/api/portraits/women/70.jpg',
                          bio: 'Teacher from Poland.')
