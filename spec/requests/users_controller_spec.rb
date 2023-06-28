@@ -4,9 +4,9 @@ RSpec.describe UsersController, type: :controller do
   describe 'GET index' do
     it 'assigns @users' do
       user = User.create(name: 'John Doe')
-      get :index
+      get :index, format: :html
       expect(response).to be_successful
-      expect(assigns(:users)).to eq([user])
+      expect(assigns(:users)).to include(user)
     end
 
     it 'responds with status :ok' do

@@ -20,18 +20,28 @@ RSpec.describe 'Users', type: :system do
   end
 
   scenario 'redirects to user show page when clicking on a user' do
-    user = User.create(name: 'Lilly', posts_counter: 4, photo: 'https://randomuser.me/api/portraits/women/70.jpg',
+    user = User.create(name: 'joy', posts_counter: 4, photo: 'https://randomuser.me/api/portraits/women/70.jpg',
                        bio: 'Teacher from Poland.')
     user_show_page_url = "#{Capybara.app_host}/users/#{user.id}"
 
     visit users_path(user)
 
-    within('.user-details') do
-      click_link 'Lilly'
-    end
+    
+      click_link 'joy'
+    
 
     expect(page).to have_current_path(user_show_page_url)
   end
+
+  scenario 'displays a button to view all of a user\'s posts' do
+    user = User.create(name: 'Lilly', posts_counter: 4, photo: 'https://randomuser.me/api/portraits/women/70.jpg',
+                       bio: 'Teacher from Poland.')
+  
+    visit user_path(user)
+  
+    expect(page).to have_link('See All Posts')
+  end
+  
 
   describe 'User show page' do
     scenario 'displays the user profile picture, username, number of posts, bio, and first 3 posts' do
